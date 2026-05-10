@@ -17,15 +17,18 @@
    ============================================================ */
 
 /* ── ✏️  YOUR API KEY ─────────────────────────────────────── */
-const YOUTUBE_API_KEY = 'YOUR_API_KEY_HERE';
+const YOUTUBE_API_KEY = 'AIzaSyDeZh9T1B5LE1EmlS4TELNtlykPyv0q9ds';
 
 /* ── ✏️  YOUR SMP MEMBERS ────────────────────────────────── */
 /* Add/remove channel entries. Use channel IDs (UCxxx...) for
    fastest loading. Custom handles (@Name) also work.          */
 const CHANNELS = [
-  { id: 'UCX6OQ3DkcsbYNE6H8uQQuVA' },  // MrBeast (example)
-  { id: 'UCpB959t8iPrxQWj7G6n0ctQ' },  // example
-  { id: 'UCbmNph6atAoGfqLoCL_duAg' },  // example
+  { id: '@MrZ-16' },  // MrBeast (example)
+  { id: '@waffsterwaffley' },  // example
+  { id: '@daveshmeds' },
+  { id: '@eyedunnoman' },
+  { id: '@JelloMAXIMUM' },
+  { id: '@Wind0wsVistaperhaps' },  // example
   // Add more channels like:
   // { id: 'UC_your_channel_id_here' },
 ];
