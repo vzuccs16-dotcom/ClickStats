@@ -143,7 +143,7 @@ function computeOverallScore(ch, allChannels) {
   const videoScore = (ch.videos      / maxVideos) * 100;
 
   // Subs 50% | Avg views per video 35% | Total videos 15%
-  return Math.round(subScore * 0.50 + vpvScore * 0.35 + videoScore * 0.15);
+  return Math.round(subScore * 0.35 + vpvScore * 0.5 + videoScore * 0.15);
 }
 
 /* ============================================================
