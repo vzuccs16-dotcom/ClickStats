@@ -123,9 +123,9 @@ async function loadAllChannels() {
 function computeOverallScore(ch, allChannels) {
   const maxSubs = Math.max(...allChannels.map(c => c.subscribers), 1);
   const maxViews = Math.max(...allChannels.map(c => c.views), 1);
-  const subScore = (ch.subscribers / maxSubs) * 100;
-  const viewScore = (ch.views / maxViews) * 100;
-  return Math.round((subScore * 0.6 + viewScore * 0.4));
+  const subScore = (ch.subscribers / maxSubs) * 1000;
+  const viewScore = (ch.views / maxViews) * 1000;
+  return Math.round((subScore * 0.4 + viewScore * 0.6));
 }
 
 /* ============================================================
