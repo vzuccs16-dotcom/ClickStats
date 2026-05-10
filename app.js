@@ -24,8 +24,12 @@ const YOUTUBE_API_KEY = 'AIzaSyDeZh9T1B5LE1EmlS4TELNtlykPyv0q9ds';
    fastest loading. Custom handles (@Name) also work.          */
 const CHANNELS = [
   { id: '@MrZ-16' },  // MrBeast (example)
-  { id: '@Jaytoofree' },  // example
-  { id: '@daveshmeds' },  // example
+  { id: '@waffsterwaffley' },  // example
+  { id: '@daveshmeds' },
+  { id: '@eyedunnoman' },
+  { id: '@JelloMAXIMUM' },
+   { id: '@Wind0wsVistaperhaps' },
+// example
   // Add more channels like:
   // { id: 'UC_your_channel_id_here' },
 ];
