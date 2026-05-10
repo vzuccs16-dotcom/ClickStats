@@ -1,0 +1,508 @@
+/* ============================================================
+   SMP LEADERBOARD — style.css
+   Pro Esports Edition
+   ============================================================ */
+
+:root {
+  --bg:           #07080f;
+  --surface:      #0d0f1c;
+  --surface2:     #12152a;
+  --surface3:     #1a1f38;
+  --border:       #1e2340;
+  --border2:      #2a3060;
+  --neon-blue:    #00c8ff;
+  --neon-purple:  #b44fff;
+  --neon-pink:    #ff3dac;
+  --gold:         #ffd700;
+  --silver:       #a8b8cc;
+  --bronze:       #c87941;
+  --text:         #d4dff5;
+  --muted:        #4a5580;
+  --muted2:       #2e3660;
+  --red:          #ff4466;
+  --font-head:    'Rajdhani', sans-serif;
+  --font-mono:    'Share Tech Mono', monospace;
+  --font-body:    'Barlow', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=Barlow:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(0,200,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,200,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(180,79,255,0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+header {
+  background: rgba(13,15,28,0.97);
+  border-bottom: 1px solid var(--border2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header::before {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue), var(--neon-purple));
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-block {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-crown {
+  font-size: 1.5rem;
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 6px var(--neon-blue)); }
+  50%       { filter: drop-shadow(0 0 14px var(--neon-blue)); }
+}
+
+h1 {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--neon-blue) 0%, var(--neon-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.update-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.update-pill.live {
+  color: var(--neon-blue);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 8px rgba(0,200,255,0.2);
+}
+
+.update-pill.error {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.refresh-btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border2);
+  padding: 0.3rem 0.9rem;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: color 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.refresh-btn:hover {
+  color: var(--neon-blue);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 10px rgba(0,200,255,0.2);
+}
+
+/* ── TABS ────────────────────────────────────────────────── */
+.tab-nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.tab {
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--muted);
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.65rem 1.3rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.tab:hover { color: var(--text); }
+
+.tab.active {
+  color: var(--neon-blue);
+  border-bottom-color: var(--neon-blue);
+  text-shadow: 0 0 12px rgba(0,200,255,0.4);
+}
+
+/* ── MAIN ────────────────────────────────────────────────── */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── PODIUM ──────────────────────────────────────────────── */
+.podium-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.podium-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 1.5rem 1rem 1.2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+}
+
+.podium-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+
+.podium-card.rank-1::before { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.podium-card.rank-2::before { background: linear-gradient(90deg, transparent, var(--silver), transparent); }
+.podium-card.rank-3::before { background: linear-gradient(90deg, transparent, var(--bronze), transparent); }
+
+.podium-card.rank-1 { border-color: rgba(255,215,0,0.3); box-shadow: 0 0 30px rgba(255,215,0,0.05); order: 2; }
+.podium-card.rank-2 { border-color: rgba(168,184,204,0.15); order: 1; }
+.podium-card.rank-3 { border-color: rgba(200,121,65,0.15); order: 3; }
+
+.podium-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,200,255,0.08);
+}
+
+.podium-rank {
+  font-family: var(--font-head);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.rank-1 .podium-rank { color: var(--gold); text-shadow: 0 0 20px rgba(255,215,0,0.35); }
+.rank-2 .podium-rank { color: var(--silver); }
+.rank-3 .podium-rank { color: var(--bronze); }
+
+.podium-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.75rem;
+  display: block;
+  border: 2px solid var(--border2);
+}
+
+.podium-avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--surface2);
+  margin: 0 auto 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neon-blue);
+  border: 2px solid var(--border2);
+}
+
+.podium-name {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.podium-score {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 8px rgba(0,200,255,0.35);
+}
+
+.podium-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.2rem;
+}
+
+/* ── TABLE ───────────────────────────────────────────────── */
+.board-section {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  overflow: hidden;
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+}
+
+.leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.leaderboard thead tr {
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border2);
+}
+
+.leaderboard th {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 0.67rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.leaderboard th.num { text-align: right; }
+
+.leaderboard tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+
+.leaderboard tbody tr:last-child { border-bottom: none; }
+
+.leaderboard tbody tr:hover { background: var(--surface2); }
+.leaderboard tbody tr:hover td:first-child { border-left-color: var(--neon-blue) !important; }
+
+.leaderboard tbody tr td:first-child {
+  border-left: 2px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.leaderboard tbody tr.rank-1 td:first-child { border-left-color: var(--gold); }
+.leaderboard tbody tr.rank-2 td:first-child { border-left-color: var(--silver); }
+.leaderboard tbody tr.rank-3 td:first-child { border-left-color: var(--bronze); }
+
+.leaderboard td { padding: 0.9rem 1rem; color: var(--text); }
+
+.leaderboard td.num {
+  text-align: right;
+  color: var(--neon-blue);
+  text-shadow: 0 0 6px rgba(0,200,255,0.25);
+}
+
+.leaderboard td.muted-num {
+  text-align: right;
+  color: var(--muted);
+}
+
+.rank-num {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--muted2);
+  min-width: 2rem;
+  display: inline-block;
+  letter-spacing: 0.05em;
+}
+
+.channel-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.channel-cell img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border2);
+}
+
+.channel-cell-placeholder {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--neon-purple);
+  flex-shrink: 0;
+  border: 1px solid var(--border2);
+}
+
+.channel-name-link {
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.15s, text-shadow 0.15s;
+}
+
+.channel-name-link:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px rgba(0,200,255,0.4);
+}
+
+.loading-cell {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.error-cell {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--red);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+/* ── SCORE BAR ───────────────────────────────────────────── */
+.score-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+
+.score-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+  border-radius: 2px;
+  min-width: 2px;
+  max-width: 80px;
+  box-shadow: 0 0 6px rgba(0,200,255,0.35);
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  letter-spacing: 0.08em;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  h1 { font-size: 1.5rem; }
+  .podium-row { grid-template-columns: 1fr; }
+  .podium-card { clip-path: none; order: unset !important; }
+  .board-section { clip-path: none; }
+  .leaderboard th, .leaderboard td { padding: 0.65rem 0.65rem; }
+}
