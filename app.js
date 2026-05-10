@@ -159,11 +159,11 @@ function computeOverallScore(ch, allChannels) {
   const maxVpv    = Math.max(...allChannels.map(c => vpv(c)), 1);
   const maxVideos = Math.max(...allChannels.map(c => c.videos), 1);
 
-  const subScore   = (ch.subscribers / maxSubs)   * 100;
-  const vpvScore   = (vpv(ch)        / maxVpv)    * 100;
-  const videoScore = (ch.videos      / maxVideos) * 100;
+  const subScore   = (ch.subscribers / maxSubs)   * 1000;
+  const vpvScore   = (vpv(ch)        / maxVpv)    * 1000;
+  const videoScore = (ch.videos      / maxVideos) * 1000;
 
-  return Math.round(subScore * 0.50 + vpvScore * 0.35 + videoScore * 0.15);
+  return Math.round(subScore * 0.35 + vpvScore * 0.5 + videoScore * 0.15);
 }
 
 /* ============================================================
