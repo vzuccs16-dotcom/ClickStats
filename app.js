@@ -28,7 +28,7 @@ const CHANNELS = [
   { id: 'UC9PA3keDvE6BansQGzJYpnQ' },
   { id: 'UCY5bByqvhzZm_423ktlaCWQ' },
   { id: 'UCBGp0LtQR__FMn78G0G8W7A' },
-  { id: 'UC-v7iAWeGUCSRAx4BwXZG4Q' },---
+  { id: 'UC-v7iAWeGUCSRAx4BwXZG4Q' },
   { id: 'UCrZaDSUdOGakfHzmcEEaKPg' },  // MrBeast (example)
   { id: 'UCh8tisWbz2u9oKmIFqY5lew' },  // example
   { id: 'UCTWfPVRZ-r8CLKSVbHZvbrA' },
