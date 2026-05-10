@@ -23,12 +23,12 @@ const YOUTUBE_API_KEY = 'AIzaSyDeZh9T1B5LE1EmlS4TELNtlykPyv0q9ds';
 /* Add/remove channel entries. Use channel IDs (UCxxx...) for
    fastest loading. Custom handles (@Name) also work.          */
 const CHANNELS = [
-  { id: '@MrZ-16' },  // MrBeast (example)
-  { id: '@waffsterwaffley' },  // example
-  { id: '@daveshmeds' },
-  { id: '@eyedunnoman' },
-  { id: '@JelloMAXIMUM' },
-  { id: '@Wind0wsVistaperhaps' },  // example
+  { id: 'UC22sjwkxLxgecj1JytqVmIw' },  // MrBeast (example)
+  { id: 'UC-yMNwCYHhDxbCyJTvxKAkQ' },  // example
+  { id: 'UC9PA3keDvE6BansQGzJYpnQ' },
+  { id: 'UCY5bByqvhzZm_423ktlaCWQ' },
+  { id: 'UCBGp0LtQR__FMn78G0G8W7A' },
+  { id: 'UC-v7iAWeGUCSRAx4BwXZG4Q' },  // example
   // Add more channels like:
   // { id: 'UC_your_channel_id_here' },
 ];
