@@ -17,7 +17,7 @@
    ============================================================ */
 
 /* ── ✏️  YOUR API KEY ─────────────────────────────────────── */
-const YOUTUBE_API_KEY = 'AIzaSyDeZh9T1B5LE1EmlS4TELNtlykPyv0q9ds';
+const YOUTUBE_API_KEY = 'AIzaSyB7RZoZXyPlUuGIS5i3k3344nINEPxLklk';
 
 /* ── ✏️  YOUR SMP MEMBERS ────────────────────────────────── */
 /* Add/remove channel entries. Use channel IDs (UCxxx...) for
