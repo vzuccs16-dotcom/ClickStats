@@ -12,14 +12,24 @@
    ============================================================ */
 
 /* ── ✏️  YOUR API KEY ─────────────────────────────────────── */
-const YOUTUBE_API_KEY = 'YOUR_API_KEY_HERE';
+const YOUTUBE_API_KEY = 'AIzaSyB7RZoZXyPlUuGIS5i3k3344nINEPxLklk';
 
 /* ── ✏️  YOUR SMP MEMBERS ────────────────────────────────── */
+/* Add/remove channel entries. Use channel IDs (UCxxx...) for
+   fastest loading. Custom handles (@Name) also work.          */
 const CHANNELS = [
-  { id: 'UCX6OQ3DkcsbYNE6H8uQQuVA' },  // MrBeast (example)
-  { id: 'UCpB959t8iPrxQWj7G6n0ctQ' },  // example
-  { id: 'UCbmNph6atAoGfqLoCL_duAg' },  // example
-  // { id: 'UC_your_channel_id_here' },
+  { id: 'UC22sjwkxLxgecj1JytqVmIw' },  // MrBeast (example)
+  { id: 'UC-yMNwCYHhDxbCyJTvxKAkQ' },  // example
+  { id: 'UC9PA3keDvE6BansQGzJYpnQ' },
+  { id: 'UCY5bByqvhzZm_423ktlaCWQ' },
+  { id: 'UCBGp0LtQR__FMn78G0G8W7A' },
+  { id: 'UC-v7iAWeGUCSRAx4BwXZG4Q' },
+  { id: 'UCrZaDSUdOGakfHzmcEEaKPg' },  // MrBeast (example)
+  { id: 'UCh8tisWbz2u9oKmIFqY5lew' },  // example
+  { id: 'UCTWfPVRZ-r8CLKSVbHZvbrA' },
+  { id: 'UCCrt8hj2s0cpJuQkDCz7e5Q' },
+  { id: 'UCclL0KruCx4_TDvkTF_5Kvw' },
+  { id: 'UCRVtuFiUTfTsHhUKUFERp4A' },// example
 ];
 
 /* ── REFRESH INTERVAL ─────────────────────────────────────── */
@@ -116,7 +126,7 @@ function computeOverallScore(ch, allChannels) {
   const maxViews = Math.max(...allChannels.map(c => c.views), 1);
   const subScore  = (ch.subscribers / maxSubs)  * 100;
   const viewScore = (ch.views       / maxViews) * 100;
-  return Math.round(subScore * 0.6 + viewScore * 0.4);
+  return Math.round(subScore * 0.4 + viewScore * 0.6);
 }
 
 /* ============================================================
