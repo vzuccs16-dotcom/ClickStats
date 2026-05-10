@@ -35,8 +35,6 @@ const CHANNELS = [
   { id: 'UCCrt8hj2s0cpJuQkDCz7e5Q' },
   { id: 'UCclL0KruCx4_TDvkTF_5Kvw' },
   { id: 'UCRVtuFiUTfTsHhUKUFERp4A' },// example
-  // Add more channels like:
-  // { id: 'UC_your_channel_id_here' },
 ];
 
 /* ── REFRESH INTERVAL ─────────────────────────────────────── */
