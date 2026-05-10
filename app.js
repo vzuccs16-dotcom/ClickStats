@@ -29,7 +29,8 @@ const CHANNELS = [
   { id: 'UCTWfPVRZ-r8CLKSVbHZvbrA' },
   { id: 'UCCrt8hj2s0cpJuQkDCz7e5Q' },
   { id: 'UCclL0KruCx4_TDvkTF_5Kvw' },
-  { id: 'UCRVtuFiUTfTsHhUKUFERp4A' },// example
+  { id: 'UCRVtuFiUTfTsHhUKUFERp4A' },
+   { id: 'UCrsrTjA0WtZdh4h--nht4dw' },// example
 ];
 
 /* ── REFRESH INTERVAL ─────────────────────────────────────── */
