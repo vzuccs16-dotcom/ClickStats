@@ -37,6 +37,7 @@ const CHANNELS = [
   { id: 'UCWPLaAeDKxkfnEwZZHMcWCQ' },
   { id: 'UCt3SETIQ7I5fncdGiUbByGg' },
   { id: 'UCZUa8UHlqByXminjKixsH9w' },
+   { id: 'UCMX81wOt7zI7ycBqBfTpLVw' },
 
    // example
 ];
