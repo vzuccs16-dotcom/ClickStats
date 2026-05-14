@@ -10,15 +10,38 @@
    ============================================================ */
 
 /* ── ✏️  YOUR API KEY ─────────────────────────────────────── */
-const YOUTUBE_API_KEY = 'YOUR_API_KEY_HERE';
+/* ── ✏️  YOUR API KEY ─────────────────────────────────────── */
+const YOUTUBE_API_KEY = 'AIzaSyB7RZoZXyPlUuGIS5i3k3344nINEPxLklk';
 
 /* ── ✏️  YOUR SMP MEMBERS ────────────────────────────────── */
+/* Add/remove channel entries. Use channel IDs (UCxxx...) for
+   fastest loading. Custom handles (@Name) also work.          */
 const CHANNELS = [
-  { id: 'UCX6OQ3DkcsbYNE6H8uQQuVA' },  // example — replace with your members
-  { id: 'UCpB959t8iPrxQWj7G6n0ctQ' },
-  { id: 'UCbmNph6atAoGfqLoCL_duAg' },
-  // { id: 'UC_your_channel_id_here' },
+  { id: 'UC22sjwkxLxgecj1JytqVmIw' },  // MrBeast (example)
+  { id: 'UC-yMNwCYHhDxbCyJTvxKAkQ' },  // example
+  { id: 'UC9PA3keDvE6BansQGzJYpnQ' },
+  { id: 'UCY5bByqvhzZm_423ktlaCWQ' },
+  { id: 'UCBGp0LtQR__FMn78G0G8W7A' },
+  { id: 'UC-v7iAWeGUCSRAx4BwXZG4Q' },
+  { id: 'UCrZaDSUdOGakfHzmcEEaKPg' },  // MrBeast (example)
+  { id: 'UCh8tisWbz2u9oKmIFqY5lew' },  // example
+  { id: 'UCTWfPVRZ-r8CLKSVbHZvbrA' },
+  { id: 'UCCrt8hj2s0cpJuQkDCz7e5Q' },
+  { id: 'UCclL0KruCx4_TDvkTF_5Kvw' },
+  { id: 'UCRVtuFiUTfTsHhUKUFERp4A' },
+     { id: 'UCoBVWPVkeg3D6u26AgxhB0w' },
+  { id: 'UC2uPNlirX7bJXZQqkKYjPuw' },
+  { id: 'UCluciE6JD-z-VWGD-52YuZQ' },  // MrBeast (example)
+  { id: 'UC8zY4QXo_5VcL9Fb9T6qwmg' },  // example
+  { id: 'UC-dJHMczPppOUPs-Zu7fWRA' },
+  { id: 'UCWPLaAeDKxkfnEwZZHMcWCQ' },
+  { id: 'UCt3SETIQ7I5fncdGiUbByGg' },
+  { id: 'UCZUa8UHlqByXminjKixsH9w' },
+  
+
+   // example
 ];
+
 
 const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
 const STORAGE_KEY = 'clicksmp_snapshots';
