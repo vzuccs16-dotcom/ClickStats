@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Click SMP Leaderboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo-block">
+        <span class="logo-crown">◆</span>
+        <h1>Click SMP</h1>
+      </div>
+      <div class="header-meta">
+        <span class="update-pill" id="update-status">Loading...</span>
+        <button class="icon-btn" id="theme-toggle" title="Toggle theme">☀</button>
+        <button class="refresh-btn" id="refresh-btn">↺ Refresh</button>
+      </div>
+    </div>
+    <nav class="tab-nav">
+      <button class="tab active" data-tab="overall">Overall</button>
+      <button class="tab" data-tab="subscribers">Subscribers</button>
+      <button class="tab" data-tab="views">Views</button>
+      <button class="tab" data-tab="videos">Videos</button>
+      <button class="tab" data-tab="frequency">Upload Freq</button>
+      <button class="tab" data-tab="milestones">Milestones</button>
+      <button class="tab" data-tab="compare">Compare</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- MVP CARD -->
+    <div id="mvp-card" class="mvp-card" style="display:none"></div>
+
+    <!-- RIVALRY CARD -->
+    <div id="rivalry-card" class="rivalry-card" style="display:none"></div>
+
+    <!-- LEADERBOARD SECTION -->
+    <div id="leaderboard-section">
+      <div class="podium-row" id="podium-row"></div>
+      <section class="board-section">
+        <table class="leaderboard" id="leaderboard-table">
+          <thead><tr id="table-head"></tr></thead>
+          <tbody id="leaderboard-body">
+            <tr><td colspan="7" class="loading-cell">Fetching channel data...</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <!-- MILESTONES SECTION -->
+    <div id="milestones-section" style="display:none">
+      <div class="section-title">Next Milestones</div>
+      <div id="milestones-content"></div>
+    </div>      <div id="timeline-content"></div>
+    </div>
+
+    <!-- FREQUENCY SECTION -->
+    <div id="frequency-section" style="display:none">
+      <div class="section-title">Upload Frequency</div>
+      <div class="section-sub">Average videos per month since channel creation</div>
+      <div id="frequency-content"></div>
+    </div>
+
+    <!-- COMPARE SECTION -->
+    <div id="compare-section" style="display:none">
+      <div class="compare-controls">
+        <select id="compare-select-a" class="compare-select"></select>
+        <span class="compare-controls-vs">VS</span>
+        <select id="compare-select-b" class="compare-select"></select>
+      </div>
+      <div id="compare-content"></div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Data via YouTube Data API v3 &mdash; auto-refreshes every 5 minutes</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
